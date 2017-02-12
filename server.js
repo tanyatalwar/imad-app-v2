@@ -1,3 +1,4 @@
+// library used like express morgan path to configure server
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
