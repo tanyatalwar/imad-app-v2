@@ -8,6 +8,19 @@ app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  
+});
+// for getting the url configure
+app.get('/article-one',function (req, res) {
+    res.send('Article one resquewsted and it will be served here');
+});
+
+app.get('/article-two',function (req, res) {
+    res.send('Article two resquewsted and it will be served here');
+});
+
+app.get('/article-three',function (req, res) {
+    res.send('Article one resquewsted and it will be served here');
 });
 
 app.get('/ui/style.css', function (req, res) {
