@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 });
 // for getting the url configure
 app.get('/article-one',function (req, res) {
-    res.send('Article one resquewsted and it will be served here');
+   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
 });
 
 app.get('/article-two',function (req, res) {
