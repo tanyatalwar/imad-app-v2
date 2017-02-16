@@ -5,6 +5,14 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+//making javascript object
+// for multiple line use back quote
+var content ={
+    title:'Article one|Tanya talwar',
+    heading:'Article One',
+    date: '12 feb',
+    content: 'this is proper patola'
+};
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
