@@ -61,7 +61,7 @@ app.get('/', function (req, res) {
 });
 // for getting the url configure
 app.get('/article-one',function (req, res) {
-   res.sendFile(createTemplate(ArticleOne));
+   res.send(createTemplate(ArticleOne));
 });
 
 app.get('/article-two',function (req, res) {
