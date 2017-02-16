@@ -12,5 +12,5 @@ img.onclick = function(){
     //giving jumping effect through css 
     // modi.style.marginLeft='100px';
     //giving moving effect through setInterval
-var interval = setInterval(moveLeft, 100);  
+var interval = setInterval(moveRight, 100);  
 };
