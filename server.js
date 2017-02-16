@@ -7,12 +7,52 @@ var app = express();
 app.use(morgan('combined'));
 //making javascript object
 // for multiple line use back quote
-var ArticleOne ={
+var ArticleOne = {
     title:'Article one|Tanya talwar',
     heading:'Article One',
     date: '12 feb',
     content: 'this is proper patola'
 };
+
+function createTemplate(data)
+{
+//making html template
+//declaring variable here
+var title = data.title;
+var heading = data.heading;
+var date = data.date;
+var content = content.data;
+
+var htmlTemplate =`
+<html>
+    <head>
+    <title>
+       Article One !~Tanya Talwar 
+    </title>
+    <meta name="viewport" content="width-device-width, intial-scale-1"/>
+    <link href="/ui/style.css" rel="stylesheet" />
+    <style>
+       
+    </style>
+    </head>
+    
+    <body>
+        <div class="container">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <!--horizontal line-->
+        <hr/>
+        <h1>${date}</h1>
+        <h1>${heading}</h1>
+        <h3>${title}</h3>
+        <div>
+        <p>${content}</p>
+        </div>
+        </div>
+    </body>
+</html>`;
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
