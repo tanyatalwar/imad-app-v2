@@ -7,7 +7,7 @@ var app = express();
 app.use(morgan('combined'));
 //making javascript object
 // for multiple line use back quote
-var content ={
+var ArticleOne ={
     title:'Article one|Tanya talwar',
     heading:'Article One',
     date: '12 feb',
