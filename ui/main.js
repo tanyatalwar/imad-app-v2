@@ -8,6 +8,6 @@ element.innerHTML = 'New value';
 //to move the image
 var img = document.getElementById('modi');
 //using onclick event
-modi.onclick = function(){
+img.onclick = function(){
     modi.style.marginLeft='100px';
 };
