@@ -52,6 +52,7 @@ var htmlTemplate =`
         </div>
     </body>
 </html>`;
+return createTemplate;
 }
 
 app.get('/', function (req, res) {
@@ -60,7 +61,7 @@ app.get('/', function (req, res) {
 });
 // for getting the url configure
 app.get('/article-one',function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+   res.sendFile(createTemplate(ArticleOne));
 });
 
 app.get('/article-two',function (req, res) {
