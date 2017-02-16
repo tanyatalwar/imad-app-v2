@@ -8,6 +8,7 @@ element.innerHTML = 'New value';
 //to move the image
 var img = document.getElementById('modi');
 //using onclick event shift to left
+var marginLeft=0;
 function moveRight(){
     marginLeft =  marginLeft + 10;
     img.style.marginLeft  =  marginLeft + 'px';
