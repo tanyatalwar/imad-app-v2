@@ -8,6 +8,10 @@ element.innerHTML = 'New value';
 //to move the image
 var img = document.getElementById('modi');
 //using onclick event shift to left
+function moveRight(){
+    marginLeft =  marginLeft + 10;
+    img.style.marginLeft  =  marginLeft + 'px';
+}
 img.onclick = function(){
     //giving jumping effect through css 
     // modi.style.marginLeft='100px';
