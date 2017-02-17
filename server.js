@@ -14,6 +14,13 @@ var ArticleOne = {
     content: 'this is proper patola'
 };
 
+//init the counter with 0
+var counter = 0;
+app.get('/counter', function(req, res) {
+    counter = counter + 1;
+    res.send(counter.toString());
+});
+//converted to a string format 
 function createTemplate(data)
 {
 //making html template
