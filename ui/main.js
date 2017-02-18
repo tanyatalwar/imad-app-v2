@@ -13,12 +13,12 @@ function moveRight(){
     marginLeft =  marginLeft + 10;
     img.style.marginLeft  =  marginLeft + 'px';
 }
-img.onclick = function(){
-    //giving jumping effect through css 
-    // modi.style.marginLeft='100px';
-    //giving moving effect through setInterval
-var interval = setInterval(moveRight, 100);  
-};
+// img.onclick = function(){
+//     //giving jumping effect through css 
+//     // modi.style.marginLeft='100px';
+//     //giving moving effect through setInterval
+// var interval = setInterval(moveRight, 100);  
+// };
 
 //counter code
 var button = document.getElementById('button');
