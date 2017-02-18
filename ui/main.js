@@ -19,3 +19,15 @@ img.onclick = function(){
     //giving moving effect through setInterval
 var interval = setInterval(moveRight, 100);  
 };
+
+//counter code
+var button = document.getElementById('counter');
+var counter = 0;
+button.onclick = function(){
+    // first make a request to counter endpoint
+    //capture a response and store it in a variable
+    // render the variable in correect span
+    counter = counter+1;
+    var span = document.getElementById('count');
+    span.innerHTML = counter.toString();
+};
