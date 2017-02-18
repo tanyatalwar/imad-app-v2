@@ -21,7 +21,7 @@ var interval = setInterval(moveRight, 100);
 };
 
 //counter code
-var button = document.getElementById('counter');
+var button = document.getElementById('button');
 var counter = 0;
 button.onclick = function(){
     // first make a request to counter endpoint
