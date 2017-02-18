@@ -22,9 +22,9 @@ function moveRight(){
 
 //counter code
 var button = document.getElementById('button');
-var counter = 0;
+// var counter = 0;
 button.onclick = function(){
-    // first make a request to counter endpoint
+    // create a request object
     var request = new XMLHttpRequest();
     request.onreadystatechange = function ()
     {
@@ -36,7 +36,7 @@ button.onclick = function(){
               var counter = request.reponseText;
                //capture a response and store it in a variable
     // render the variable in correect span
-    counter = counter+1;
+    // counter = counter+1;
     var span = document.getElementById('count');
     span.innerHTML = counter.toString();
           }
@@ -44,5 +44,7 @@ button.onclick = function(){
       }
       // not done yet
     };
-   
+   // make a req
+   request.open('GET','http://tanyatalwar.imad.hasura-app.io/counter', true);
+   request.send(null);
 };
