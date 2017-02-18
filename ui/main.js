@@ -25,9 +25,24 @@ var button = document.getElementById('button');
 var counter = 0;
 button.onclick = function(){
     // first make a request to counter endpoint
-    //capture a response and store it in a variable
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function ()
+    {
+      if(request.readystate == XMLHttpRequest.DONE)
+      {
+          //we want to take some action
+          if(request.status == 200)
+          {
+              var counter = request.reponseText;
+               //capture a response and store it in a variable
     // render the variable in correect span
     counter = counter+1;
     var span = document.getElementById('count');
     span.innerHTML = counter.toString();
+          }
+          
+      }
+      // not done yet
+    };
+   
 };
