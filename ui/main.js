@@ -25,12 +25,12 @@ function moveRight(){
 //counter code
 var button = document.getElementById('button');
 // var counter = 0;
-button.onclick = function(){
+button.onclick = function () {
     // create a request object
     var request = new XMLHttpRequest();
     request.onreadystatechange = function ()
     {
-      if(request.readystate == XMLHttpRequest.DONE)
+      if(request.readyState == XMLHttpRequest.DONE)
       {
           //we want to take some action
           if(request.status == 200)
@@ -47,6 +47,6 @@ button.onclick = function(){
       // not done yet
     };
    // make a req
-   request.open('GET','http://tanyatalwar.imad.hasura-app.io/counter', true);
+   request.open('GET', 'http://tanyatalwar.imad.hasura-app.io/counter', true);
    request.send(null);
 };
