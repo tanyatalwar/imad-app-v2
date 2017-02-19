@@ -51,3 +51,22 @@ button.onclick = function ()
    request.open('GET', 'http://tanyatalwar.imad.hasura-app.io/counter', true);
    request.send(null);
 };
+
+
+
+//Submit name code it give name to server and return the matching
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('Submit_button');
+submit.onclick = function(){
+    //this function should make a request to the server and send the name
+    //compare a list of name and render it
+    var name = ['name1','name2','name3'];
+    var list = '';
+    for(var i=0; i< names.length;i++)
+    {
+        list += '<li>' + names[i] +'</li>';
+    }
+    var ul = document.getElementById('name_list');
+    ul.innerHTML = list;
+};
