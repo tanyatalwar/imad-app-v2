@@ -47,6 +47,6 @@ button.onclick = function(){
       // not done yet
     };
    // make a req
-   request.open('GET','http://tanyatalwar.imad.hasura-app.io/counter', true);
+   request.open('GET','http://tanyatalwar.imad.hasura-app.io/', true);
    request.send(null);
 };
