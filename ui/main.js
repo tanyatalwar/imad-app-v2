@@ -25,7 +25,8 @@ function moveRight(){
 //counter code
 var button = document.getElementById('button');
 // var counter = 0;
-button.onclick = function () {
+button.onclick = function ()
+{
     // create a request object
     var request = new XMLHttpRequest();
     request.onreadystatechange = function ()
