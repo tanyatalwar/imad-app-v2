@@ -20,6 +20,8 @@ function moveRight(){
 // var interval = setInterval(moveRight, 100);  
 // };
 
+
+
 //counter code
 var button = document.getElementById('button');
 // var counter = 0;
