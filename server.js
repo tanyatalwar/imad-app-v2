@@ -62,10 +62,18 @@ var htmlTemplate =`
 return createTemplate;
 }
 
+app.get('/test-db', function(req,res){
+    //make a select request
+    //return the response with the result
+});
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
   
 });
+
 // for getting the url configure
 app.get('/article-one',function (req, res) {
    res.send(createTemplate(ArticleOne));
