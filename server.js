@@ -93,8 +93,30 @@ app.get('/', function (req, res) {
 });
 
 // for getting the url configure
-app.get('/article-one',function (req, res) {
-   res.send(createTemplate(ArticleOne));
+app.get('/articles/:articleName',function (req, res) {
+    var articleName = req.params.articleNames;
+    
+    pool.query("SELECT * FROM article WHERE title = " + req.params.articleNames,function(err, result)
+    {
+       if (err){
+           res.status(500).send(err.toString());
+       }
+       else
+       {
+           if(result.rows.lenght === 0)
+           {
+               res.status(404).send('Article not found');
+           }
+           else
+           {
+               var articleData = result.rows[0];
+               res.send(createTemplate(articleData));
+           }
+       }
+       
+       
+    });
+   
 });
 
 app.get('/article-two',function (req, res) {
