@@ -10,6 +10,7 @@ var config = {
     port:'5432',
     password: process.env.DB_PASSWORD
 };
+var crypto = require('crypto');
 
 
 var app = express();
@@ -30,46 +31,61 @@ app.get('/counter', function(req, res) {
     res.send(counter.toString());
 });
 //converted to a string format 
-function createTemplate(data)
-{
-//making html template
-//declaring variable here
-var title = data.title;
-var heading = data.heading;
-var date = data.date;
-var content = data.content;
+// function createTemplate(data)
+// {
+// //making html template
+// //declaring variable here
+// var title = data.title;
+// var heading = data.heading;
+// var date = data.date;
+// var content = data.content;
 
-var htmlTemplate =`
-<html>
-    <head>
-    <title>
-       Article One !~Tanya Talwar 
-    </title>
-    <meta name="viewport" content="width-device-width, intial-scale-1"/>
-    <link href="/ui/style.css" rel="stylesheet" />
-    <style>
+// var htmlTemplate =`
+// <html>
+//     <head>
+//     <title>
+//       Article One !~Tanya Talwar 
+//     </title>
+//     <meta name="viewport" content="width-device-width, intial-scale-1"/>
+//     <link href="/ui/style.css" rel="stylesheet" />
+//     <style>
        
-    </style>
-    </head>
+//     </style>
+//     </head>
     
-    <body>
-        <div class="container">
-        <div>
-            <a href="/">Home</a>
-        </div>
-        <!--horizontal line-->
-        <hr/>
-        <h1>${date}</h1>
-        <h1>${heading}</h1>
-        <h3>${title}</h3>
-        <div>
-        <p>${content}</p>
-        </div>
-        </div>
-    </body>
-</html>`;
-return createTemplate;
+//     <body>
+//         <div class="container">
+//         <div>
+//             <a href="/">Home</a>
+//         </div>
+//         <!--horizontal line-->
+//         <hr/>
+//         <h1>${date}</h1>
+//         <h1>${heading}</h1>
+//         <h3>${title}</h3>
+//         <div>
+//         <p>${content}</p>
+//         </div>
+//         </div>
+//     </body>
+// </html>
+// return createTemplate;
+// }
+
+
+function hash(input,salt){
+    //creating a hash
+    var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512,'sha512');
+    return hashed.toString('hex');
 }
+
+app.get('/hash/:input',function(req,res){
+    var hasedString = hash(req.params.input, 'this is some random string');
+    res.send(hasedString);
+});
+
+
+
 var pool = new Pool(config);
 app.get('/test-db', function(req,res){
     //make a select request
