@@ -2,7 +2,9 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+// creating pool
 var Pool = require('pg').Pool;
+// creating config
 var config = {
     user: 'tanyatalwar',
     database: 'tanyatalwar',
@@ -100,7 +102,7 @@ app.get('/create-user',function(req,res){
     });
 });
 
-
+// for database connection
 
 var pool = new Pool(config);
 app.get('/test-db', function(req,res){
